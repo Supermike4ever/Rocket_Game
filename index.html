@@ -1,0 +1,131 @@
+<!-- =========== Winter 2024 EECS 493 Assignment 3 Starter Code =========== -->
+<html>
+
+<head>
+  <title>Asteroids</title>
+  <!-- JS -->
+  <script src='scripts/jquery.min.js'></script>
+  <script src='scripts/page.js'></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="style/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class='outer-container'>
+    <div class='game-window'>
+      <!-- ================ ASSIGNMENT 2 CODE GOES HERE ================ -->
+      <!-- Main Menu -->
+      <div id="MainMenu">
+
+        <div class="header-container">
+          <img src="src/asteroid.png" class="asteroid">
+          <h1>Asteroids</h1>
+          <img src="src/asteroid.png" class="asteroid">
+        </div>
+        <div class="button-container">
+          <button id="playGame">Play game!</button>
+          <button id="settings">Settings</button>
+        </div>
+      </div>
+      
+      <!-- Settings -->
+      <div id="settingsPanel" >
+        <h2>Settings</h2>
+      
+        <h2>Volume: <span id="value"></span></h2>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+        
+        <h2>Difficulty</h2>
+        <div class="difficulty-buttons">
+          <button id="easy">Easy</button>
+          <button id="normal" class="selected">Normal</button>
+          <button id="hard">Hard</button>
+        </div>
+        
+        <button id="closeSettings">Close</button>
+      </div>
+      <!-- Tutorial -->
+      <div id="tutorialPage" >
+        <h1 id="how-to-play">How to play</h1>
+        <p><span class="bold">Avoid</span> <span class="italic">asteroids!</span></p>
+        <img src="src/asteroid.png" class="asteroid">
+        <p><span class="bold">Collect</span> <span class="italic">shields!</span> 
+          <span class="bold">Travel</span> through <span class="italic">portals</span> to the
+          next level!</p>
+        <div id="image-container">
+          <img src="src/shield.gif" >
+          <img src="src/port.gif" >
+        </div>
+
+        <p><span class="bold">Gain</span> as many <span class="italic">points</span> as possible!</p>
+        
+
+        <button id="start-button">Start</button>
+      </div>
+
+      <!-- =================== ASSIGNMENT 2 CODE END =================== -->
+
+      <!-- Actual Game -->
+      <div id="actual-game">
+        <!-- Get Ready -->
+        <div id="getReady">
+          <h1 id="get-ready">Get Ready!</h1>
+          <img src="src/arrowkeys.png">
+          <p>Use arrow keys to move.</p>
+        </div>
+        <!-- Asteroids -->
+        <div id="rocket" >
+          <img src="src/player/player.gif">
+        </div>
+
+        <div class="asteroidSection"></div>
+        
+        <div id="portals"></div>
+        <div id="shields"></div>
+        <audio id="collect" src="src/audio/collect.mp3" preload="auto"></audio>
+        <audio id="die" src="src/audio/die.mp3" preload="auto"></audio>
+
+        <!-- Score Panel -->
+        <div id="scorePanel">
+          <div id="score">
+            SCORE <br> <span id="scoreValue">0</span>
+          </div>
+          <div id="danger">
+            DANGER <br> <span id="dangerValue">20</span>
+          </div>
+          <div id="level">
+            LEVEL <br> <span id="levelValue">1</span>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Gameover -->
+      <div id="gameOver">
+        <div class="header-container">
+          <img src="src/asteroid.png" class="asteroid">
+          <h1>Asteroids</h1>
+          <img src="src/asteroid.png" class="asteroid">
+        </div>
+
+        <div id = "gameOver-box">
+          <p><span>Game Over!</span></p>
+
+          <p><span>You have to fix your spaceship!</span></p>
+
+          <p><span id = "finalScore">0</span></p>
+
+          <button id="startOver-button">Start Over</button>
+        </div>
+
+
+      </div>
+
+
+    </div> <!-- end game-window -->
+  </div> <!-- end outer-container -->
+</body>
+
+</html>
